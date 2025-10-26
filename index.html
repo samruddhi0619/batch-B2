@@ -2,4 +2,25 @@
     <body>
         Hello User!!!
     </body>
+    <p>
+        pipeline {
+    agent any
+
+    stages {
+        stage('Author name') {
+            steps {
+                echo 'This job is executed by ${params.whoami'
+            }
+        }
+        stage('Creating file'){
+            steps {
+                echo 'Filename: ${params.filename}'
+                echo 'Creating...'
+                bat "echo bat `Hello Samruddhi` > ${params.filename}"
+                echo "File successsfully created"
+            }
+        }
+    }
+}
+    </p>
 </html>
